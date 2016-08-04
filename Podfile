@@ -12,7 +12,7 @@ platform :ios, '9.0'
 #end
 
 target 'ShadowsocksX' do
-    platform :osx, '10.9'
+    platform :osx, '10.11'
     pod "libsodium"
     pod 'ZXingObjC', '~> 3.1.0'
 end

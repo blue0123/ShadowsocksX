@@ -21,6 +21,11 @@
 
 @property (nonatomic, copy) NSString * method;
 
+@property (nonatomic,copy) NSString * ssrProtocol;
+
+@property (nonatomic,copy) NSString * ssrObfs;
+
+@property (nonatomic,copy) NSString * ssrObfsParam;
 
 @end
 

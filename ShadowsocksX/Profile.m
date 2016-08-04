@@ -23,6 +23,12 @@
         self.password = (dictionary[@"password"] != [NSNull null]) ? dictionary[@"password"] : nil;
   
         self.method = (dictionary[@"method"] != [NSNull null]) ? dictionary[@"method"] : nil;
+        
+        self.ssrProtocol = (dictionary[@"ssrProtocol"] != [NSNull null])? dictionary[@"ssrProtocol"] : nil;
+        
+        self.ssrObfs = (dictionary[@"ssrObfs"]!= [NSNull null])? dictionary[@"ssrObfs"] : nil;
+        
+        self.ssrObfsParam = (dictionary[@"ssrObfsParam"] != [NSNull null])? dictionary[@"ssrObfsParam"] : nil;
  
     }
     return self;
@@ -56,6 +62,12 @@
     dictionary[@"password"] = (self.password != nil) ? self.password : [NSNull null];
   
     dictionary[@"method"] = (self.method != nil) ? self.method : [NSNull null];
+    
+    dictionary[@"ssrProtocol"] = (self.ssrProtocol != nil) ? self.ssrProtocol : [NSNull null];
+    
+    dictionary[@"ssrObfs"] = (self.ssrObfs != nil) ? self.ssrObfs : [NSNull null];
+    
+    dictionary[@"ssrObfsParam"] = (self.ssrObfsParam != nil) ? self.ssrObfsParam :[NSNull null];
  
     return dictionary;
 }

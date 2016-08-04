@@ -176,6 +176,10 @@
         profile.method = [_methodBox stringValue];
         profile.password = [_passwordField stringValue];
         profile.remarks = [_remarksField stringValue];
+        //需要把下面的单独列出来，以用来兼容普通ss协议
+        profile.ssrProtocol = [_ssrProtocolField stringValue];
+        profile.ssrObfs = [_ssrObfsField stringValue];
+        profile.ssrObfsParam = [_ssrObfsParamField stringValue];
     }
 
     return YES;

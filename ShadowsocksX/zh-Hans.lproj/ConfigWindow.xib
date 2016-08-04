@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <development version="6300" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SWBConfigWindowController">
@@ -38,7 +39,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CKe-Xh-5J5">
-                                    <rect key="frame" x="46" y="185" width="59" height="17"/>
+                                    <rect key="frame" x="46" y="159" width="59" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="地址:" id="AIN-Yd-PgS">
                                         <font key="font" metaFont="system"/>
@@ -47,7 +48,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="Yqv-0U-e9E">
-                                    <rect key="frame" x="111" y="182" width="122" height="22"/>
+                                    <rect key="frame" x="111" y="156" width="122" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="sJy-M4-6ip">
                                         <font key="font" metaFont="system"/>
@@ -56,7 +57,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="K0h-Oa-Cle">
-                                    <rect key="frame" x="239" y="187" width="9" height="17"/>
+                                    <rect key="frame" x="239" y="161" width="9" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=":" id="5jj-NR-Vup">
                                         <font key="font" metaFont="system"/>
@@ -65,7 +66,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="xMg-kR-Jg1">
-                                    <rect key="frame" x="253" y="182" width="46" height="22"/>
+                                    <rect key="frame" x="253" y="156" width="46" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DJy-KZ-ic5">
                                         <font key="font" metaFont="system"/>
@@ -77,7 +78,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <comboBox verticalHuggingPriority="750" id="BON-H1-lGZ">
-                                    <rect key="frame" x="111" y="137" width="191" height="26"/>
+                                    <rect key="frame" x="111" y="121" width="191" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="xOB-U9-D8o">
                                         <font key="font" metaFont="system"/>
@@ -86,7 +87,7 @@
                                     </comboBoxCell>
                                 </comboBox>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="QJ8-B9-i9a">
-                                    <rect key="frame" x="30" y="145" width="75" height="17"/>
+                                    <rect key="frame" x="30" y="126" width="75" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="加密:" id="sjh-Vq-yVk">
                                         <font key="font" metaFont="system"/>
@@ -95,7 +96,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <secureTextField verticalHuggingPriority="750" id="WEx-Nh-Ean">
-                                    <rect key="frame" x="111" y="103" width="188" height="22"/>
+                                    <rect key="frame" x="111" y="91" width="188" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="Tb5-0w-ubb">
                                         <font key="font" metaFont="system"/>
@@ -107,7 +108,7 @@
                                     </secureTextFieldCell>
                                 </secureTextField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1N9-q9-NCn">
-                                    <rect key="frame" x="39" y="106" width="66" height="17"/>
+                                    <rect key="frame" x="39" y="94" width="66" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="密码:" id="JCW-VK-e6O">
                                         <font key="font" metaFont="system"/>
@@ -116,7 +117,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="vJ3-Ih-Bbu">
-                                    <rect key="frame" x="111" y="66" width="188" height="22"/>
+                                    <rect key="frame" x="111" y="58" width="188" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Qic-D9-4LG">
                                         <font key="font" metaFont="system"/>
@@ -125,7 +126,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sOV-ub-49b">
-                                    <rect key="frame" x="39" y="69" width="66" height="17"/>
+                                    <rect key="frame" x="39" y="61" width="66" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="备注:" id="CZu-t6-OQo">
                                         <font key="font" metaFont="system"/>
@@ -133,6 +134,17 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
+                                <segmentedControl verticalHuggingPriority="750" id="frs-bl-acc">
+                                    <rect key="frame" x="71" y="193" width="231" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="tpv-Dg-2oZ">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment label="Shadowsocks" width="112" selected="YES"/>
+                                            <segment label="ShadowsocksR" width="112" tag="1"/>
+                                        </segments>
+                                    </segmentedCell>
+                                </segmentedControl>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -149,7 +161,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="147" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn width="144" minWidth="10" maxWidth="3.4028234663852886e+38" id="3Bj-j8-0me">
