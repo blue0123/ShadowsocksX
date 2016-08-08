@@ -91,6 +91,22 @@
     }
 }
 
+- (IBAction)swithSSR:(NSSegmentedControl *)sender {
+    NSLog(@"%ld", (long)self.protocolSwitcher.integerValue);
+    //maybe change it into gray freeze status is better
+    if(self.protocolSwitcher.integerValue==0){
+        [self.ssrProtocolBox setEnabled:false];
+        [self.ssrProtocolParamField setEnabled:false];
+        [self.ssrObfsBox setEnabled:false];
+        [self.ssrObfsParamField setEnabled:false];
+    }else{
+        [self.ssrProtocolBox setEnabled:true];
+        [self.ssrProtocolParamField setEnabled:true];
+        [self.ssrObfsBox setEnabled:true];
+        [self.ssrObfsParamField setEnabled:true];
+    }
+}
+
 - (IBAction)add:(id)sender {
     if (configuration.profiles.count != 0 && ![self saveCurrentProfile]) {
         [self shakeWindow];
@@ -101,6 +117,9 @@
     profile.serverPort = 8388;
     profile.method = @"aes-256-cfb";
     profile.password = @"";
+    profile.ssrObfs = @"";
+    profile.ssrProtocol = @"";
+    profile.ssrObfsParam = @"";
     [((NSMutableArray *) configuration.profiles) addObject:profile];
     [self.tableView reloadData];
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:(configuration.profiles.count - 1)] byExtendingSelection:NO];
@@ -161,6 +180,11 @@
             } else {
                 [_remarksField setStringValue:@""];
             }
+            if(profile.ssrProtocol){
+                [_ssrProtocolBox setStringValue:profile.ssrProtocol];
+                [_ssrObfsBox setStringValue:profile.ssrObfs];
+                [_ssrObfsParamField setStringValue:profile.ssrObfsParam];
+            }
         }
     }
 }
@@ -177,8 +201,8 @@
         profile.password = [_passwordField stringValue];
         profile.remarks = [_remarksField stringValue];
         //需要把下面的单独列出来，以用来兼容普通ss协议
-        profile.ssrProtocol = [_ssrProtocolField stringValue];
-        profile.ssrObfs = [_ssrObfsField stringValue];
+        profile.ssrProtocol = [_ssrProtocolBox stringValue];
+        profile.ssrObfs = [_ssrObfsBox stringValue];
         profile.ssrObfsParam = [_ssrObfsParamField stringValue];
     }
 
@@ -219,6 +243,8 @@
 - (IBAction)cancel:(id)sender {
     [self.window performClose:self];
 }
+
+
 
 - (void)shakeWindow {
     static int numberOfShakes = 3;

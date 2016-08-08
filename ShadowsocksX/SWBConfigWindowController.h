@@ -15,14 +15,15 @@
 @interface SWBConfigWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
-@property (nonatomic, strong) IBOutlet NSComboBox *protocolBox;//从SS或SSR选择
+@property (nonatomic, strong) IBOutlet NSSegmentedControl *protocolSwitcher;//从SS或SSR选择
 @property (nonatomic, strong) IBOutlet NSTextField *serverField;
 @property (nonatomic, strong) IBOutlet NSTextField *portField;
 @property (nonatomic, strong) IBOutlet NSComboBox *methodBox;
 @property (nonatomic, strong) IBOutlet NSSecureTextField *passwordField;
 @property (nonatomic, strong) IBOutlet NSTextField *remarksField;
-@property (nonatomic, strong) IBOutlet NSTextField *ssrProtocolField;
-@property (nonatomic, strong) IBOutlet NSTextField *ssrObfsField;
+@property (nonatomic, strong) IBOutlet NSComboBox *ssrProtocolBox;//
+@property (nonatomic, strong) IBOutlet NSTextField *ssrProtocolParamField;
+@property (nonatomic, strong) IBOutlet NSComboBox *ssrObfsBox;
 @property (nonatomic, strong) IBOutlet NSTextField *ssrObfsParamField;
 @property (nonatomic, strong) IBOutlet NSButton *okButton;
 @property (nonatomic, strong) IBOutlet NSButton *cancelButton;
@@ -34,5 +35,6 @@
 - (IBAction)cancel:(id)sender;
 
 - (IBAction)sectionClick:(id)sender;
+- (IBAction)swithSSR:(id)sender;
 
 @end

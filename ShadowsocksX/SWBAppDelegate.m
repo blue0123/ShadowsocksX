@@ -346,65 +346,160 @@ void onPACChange(
 //        [ShadowsocksRunner openSSURL:[NSURL URLWithString:contents]];
         
         if ([contents hasPrefix:@"ss://"]) {
-            
+            //start of ss qr decode
+            //ss exsample
+            //ss:// + base64(method:password@domain:port)
+            //后面缺乏一个增加成功的提示！
             if (contents.length > 5) {
                 NSString *newResult = [contents substringFromIndex:5];
                 NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:newResult options:0];
                 NSString *decodedString = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
-                
-                NSRange range = [decodedString rangeOfString:@":"];
-                NSString *encryption = [decodedString substringToIndex:range.location];
-                
-                
-                decodedString = [decodedString substringFromIndex:range.location + range.length];
-                
-                
-                range = [decodedString rangeOfString:@"@" options:NSBackwardsSearch];
-                NSString *password = [decodedString substringToIndex:range.location];
-                
-                
-                decodedString = [decodedString substringFromIndex:range.location + range.length];
-                
-                
-                range = [decodedString rangeOfString:@":" options:NSBackwardsSearch];
-                NSString *port = [decodedString substringFromIndex:range.length + range.location];
-                
-                
-                decodedString = [decodedString substringToIndex:range.location];
-                
-                
-                NSString *ip = decodedString;
-                
-                
-                Profile *profile = [[Profile alloc] init];
-                profile.server = ip;
-                profile.serverPort = [port integerValue];
-                profile.method = encryption;
-                profile.password = password;
-                
-                
-                
-                Configuration *config = [ProfileManager configuration];
-                NSMutableArray *profiles = [NSMutableArray arrayWithArray:config.profiles];
-                [profiles addObject:profile];
-                config.profiles = profiles.copy;
-                
-                [ProfileManager saveConfiguration:config];
-                
-                [ShadowsocksRunner reloadConfig];
-                
-                [self configurationDidChange];
-
+                if (decodedData == NULL) {
+                    NSAlert *alert = [[NSAlert alloc] init];
+                    alert.messageText = @"配置二维码无效!";
+                    alert.informativeText = @"";
+                    [alert runModal];
+                }else{
+                    NSRange range = [decodedString rangeOfString:@":"];
+                    NSString *encryption = [decodedString substringToIndex:range.location];
+                    
+                    
+                    decodedString = [decodedString substringFromIndex:range.location + range.length];
+                    
+                    
+                    range = [decodedString rangeOfString:@"@" options:NSBackwardsSearch];
+                    NSString *password = [decodedString substringToIndex:range.location];
+                    
+                    
+                    decodedString = [decodedString substringFromIndex:range.location + range.length];
+                    
+                    
+                    range = [decodedString rangeOfString:@":" options:NSBackwardsSearch];
+                    NSString *port = [decodedString substringFromIndex:range.length + range.location];
+                    
+                    
+                    decodedString = [decodedString substringToIndex:range.location];
+                    
+                    
+                    NSString *ip = decodedString;
+                    
+                    
+                    Profile *profile = [[Profile alloc] init];
+                    profile.server = ip;
+                    profile.serverPort = [port integerValue];
+                    profile.method = encryption;
+                    profile.password = password;
+                    
+                    
+                    
+                    Configuration *config = [ProfileManager configuration];
+                    NSMutableArray *profiles = [NSMutableArray arrayWithArray:config.profiles];
+                    [profiles addObject:profile];
+                    config.profiles = profiles.copy;
+                    
+                    [ProfileManager saveConfiguration:config];
+                    
+                    [ShadowsocksRunner reloadConfig];
+                    
+                    [self configurationDidChange];
+                    NSAlert *alert = [[NSAlert alloc] init];
+                    alert.messageText = @"配置文件添加成功!";
+                    alert.informativeText = @"";
+                    [alert runModal];
+                }
             }
         
-        } else {
+        } else if([contents hasPrefix:@"ssr://"]){
+            //start of ssr qr decode
+            
+            //ssr exsample
+            //ssr:// + base64(abc.xyz:12345:auth_sha1_v2:rc4-md5:tls1.2_ticket_auth:{base64(password)}/?obfsparam={base64(混淆参数(网址))}&remarks={base64(节点名称)})
+            
+            if (contents.length > 6) {
+                NSString *newResult = [contents substringFromIndex:6];
+                NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:newResult options:0];
+                NSString *decodedString = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
+                if (decodedData == NULL) {
+                    NSAlert *alert = [[NSAlert alloc] init];
+                    alert.messageText = @"配置二维码无效!";
+                    alert.informativeText = @"";
+                    [alert runModal];//增加二维码错误处理
+                }else{
+                    NSRange paramSplit = [decodedString rangeOfString:@"?"];
+                    NSString *firstParam = [decodedString substringToIndex:paramSplit.location-1];
+                    NSString *lastParam = [decodedString substringFromIndex:paramSplit.location];
+                    lastParam = [lastParam substringFromIndex:1];
+                    
+                    NSArray *lastParamArray = [lastParam componentsSeparatedByString:@"&"];
+                    NSMutableDictionary *parserLastParamDict = [[NSMutableDictionary alloc]init];
+                    for (int i=0; i<lastParamArray.count; i++) {
+                        NSString *toSplitString = lastParamArray[i];
+                        NSRange lastParamSplit = [toSplitString rangeOfString:@"="];
+                        if (lastParamSplit.location != NSNotFound) {
+                            NSString *key = [toSplitString substringToIndex:lastParamSplit.location];
+                            NSString *value =  [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:[toSplitString substringFromIndex:lastParamSplit.location+1] options:0]encoding:NSUTF8StringEncoding];
+//                            NSString *value =  [toSplitString substringFromIndex:lastParamSplit.location+1];
+                            [parserLastParamDict setValue: value forKey: key];
+                        }
+                    }
+                    NSLog(@"parserLastParamDict is %@",parserLastParamDict);
+                    //问好后面已经parser完成，接下来需要解析到profile里面
+                    //abc.xyz:12345:auth_sha1_v2:rc4-md5:tls1.2_ticket_auth:{base64(password)}
+                    NSRange range = [firstParam rangeOfString:@":"];
+                    NSString *ip = [firstParam substringToIndex:range.location];//第一个参数是域名
+                    
+                    firstParam = [firstParam substringFromIndex:range.location + range.length];
+                    range = [firstParam rangeOfString:@":"];
+                    NSString *port = [firstParam substringToIndex:range.location];//第二个参数是端口
+                    
+                    firstParam = [firstParam substringFromIndex:range.location + range.length];
+                    range = [firstParam rangeOfString:@":"];
+                    NSString *ssrProtocol = [firstParam substringToIndex:range.location];//第三个参数是协议
+
+                    firstParam = [firstParam substringFromIndex:range.location + range.length];
+                    range = [firstParam rangeOfString:@":"];
+                    NSString *encryption = [firstParam substringToIndex:range.location];//第四个参数是加密
+                    
+                    firstParam = [firstParam substringFromIndex:range.location + range.length];
+                    range = [firstParam rangeOfString:@":"];
+                    NSString *ssrObfs = [firstParam substringToIndex:range.location];//第五个参数是混淆协议
+                    
+                    firstParam = [firstParam substringFromIndex:range.location + range.length];
+//                    range = [firstParam rangeOfString:@":"];
+                    NSString *password = [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:firstParam options:0]encoding:NSUTF8StringEncoding];//第五个参数是base64密码
+                    
+                    NSString *ssrObfsParam = @"";
+                    
+                    Profile *profile = [[Profile alloc] init];
+                    profile.server = ip;
+                    profile.serverPort = [port integerValue];
+                    profile.method = encryption;
+                    profile.password = password;
+                    profile.ssrProtocol = ssrProtocol;
+                    profile.ssrObfs = ssrObfs;
+                    profile.ssrObfsParam = ssrObfsParam;
+                    
+                    Configuration *config = [ProfileManager configuration];
+                    NSMutableArray *profiles = [NSMutableArray arrayWithArray:config.profiles];
+                    [profiles addObject:profile];
+                    config.profiles = profiles.copy;
+                    
+                    [ProfileManager saveConfiguration:config];
+                    
+                    [ShadowsocksRunner reloadConfig];
+                    
+                    [self configurationDidChange];
+                }
+            }
+            
+        } else{
             
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = NSLocalizedString(@"Invalid QR Code", nil);
             [alert runModal];
             
         }
-        
+        //end of ssr qr decode
     } else {
         // Use error to determine why we didn't get a result, such as a barcode
         // not being found, an invalid checksum, or a format inconsistency.
