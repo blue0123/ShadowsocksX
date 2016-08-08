@@ -443,7 +443,8 @@ void onPACChange(
                         }
                     }
                     NSLog(@"parserLastParamDict is %@",parserLastParamDict);
-                    //问好后面已经parser完成，接下来需要解析到profile里面
+                    
+                    //后面已经parser完成，接下来需要解析到profile里面
                     //abc.xyz:12345:auth_sha1_v2:rc4-md5:tls1.2_ticket_auth:{base64(password)}
                     NSRange range = [firstParam rangeOfString:@":"];
                     NSString *ip = [firstParam substringToIndex:range.location];//第一个参数是域名
@@ -469,6 +470,15 @@ void onPACChange(
                     NSString *password = [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:firstParam options:0]encoding:NSUTF8StringEncoding];//第五个参数是base64密码
                     
                     NSString *ssrObfsParam = @"";
+                    NSString *remarks = @"";
+                    for (NSString *key in parserLastParamDict) {
+                        NSLog(@"key: %@ value: %@", key, parserLastParamDict[key]);
+                        if ([key  isEqual: @"obfsparam"]) {
+                            ssrObfsParam = parserLastParamDict[key];
+                        } else if ([key  isEqual: @"remarks"]) {
+                            remarks = parserLastParamDict[key];
+                        }
+                    }
                     
                     Profile *profile = [[Profile alloc] init];
                     profile.server = ip;
