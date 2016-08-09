@@ -30,6 +30,7 @@
 
 - (void)loadSettings {
     configuration = [ProfileManager configuration];
+    //增加判断是SS或者是SSR协议来swith segmentController
     [self.tableView reloadData];
     [self loadCurrentProfile];
 }
@@ -92,7 +93,6 @@
 }
 
 - (IBAction)swithSSR:(NSSegmentedControl *)sender {
-    NSLog(@"%ld", (long)self.protocolSwitcher.integerValue);
     //maybe change it into gray freeze status is better
     if(self.protocolSwitcher.integerValue==0){
         [self.ssrProtocolBox setEnabled:false];
