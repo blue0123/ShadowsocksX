@@ -5,6 +5,7 @@
 
 #include "local.h"
 #include "socks5.h"
+#include "table.h"
 
 #define ADDR_STR_LEN 512
 

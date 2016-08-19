@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08756C0F1D59DF1A0048E622 /* acl.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756BFA1D59DF1A0048E622 /* acl.c */; };
+		08756C101D59DF1A0048E622 /* auth.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756BFB1D59DF1A0048E622 /* auth.c */; };
+		08756C111D59DF1A0048E622 /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756BFC1D59DF1A0048E622 /* cache.c */; };
+		08756C131D59DF1A0048E622 /* http_simple.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756BFE1D59DF1A0048E622 /* http_simple.c */; };
+		08756C141D59DF1A0048E622 /* jconf.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756BFF1D59DF1A0048E622 /* jconf.c */; };
+		08756C151D59DF1A0048E622 /* json.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C001D59DF1A0048E622 /* json.c */; };
+		08756C161D59DF1A0048E622 /* manager.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C011D59DF1A0048E622 /* manager.c */; };
+		08756C171D59DF1A0048E622 /* netutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C021D59DF1A0048E622 /* netutils.c */; };
+		08756C181D59DF1A0048E622 /* obfs.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C031D59DF1A0048E622 /* obfs.c */; };
+		08756C191D59DF1A0048E622 /* obfsutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C041D59DF1A0048E622 /* obfsutil.c */; };
+		08756C1A1D59DF1A0048E622 /* redir.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C051D59DF1A0048E622 /* redir.c */; };
+		08756C1B1D59DF1A0048E622 /* resolv.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C061D59DF1A0048E622 /* resolv.c */; };
+		08756C1C1D59DF1A0048E622 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C071D59DF1A0048E622 /* server.c */; };
+		08756C1D1D59DF1A0048E622 /* tls1.0_session.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C081D59DF1A0048E622 /* tls1.0_session.c */; };
+		08756C1E1D59DF1A0048E622 /* tls1.2_ticket.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C091D59DF1A0048E622 /* tls1.2_ticket.c */; };
+		08756C1F1D59DF1A0048E622 /* tunnel.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C0A1D59DF1A0048E622 /* tunnel.c */; };
+		08756C201D59DF1A0048E622 /* udprelay.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C0B1D59DF1A0048E622 /* udprelay.c */; };
+		08756C211D59DF1A0048E622 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C0C1D59DF1A0048E622 /* utils.c */; };
+		08756C221D59DF1A0048E622 /* verify.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C0D1D59DF1A0048E622 /* verify.c */; };
+		08756C231D59DF1A0048E622 /* win32.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756C0E1D59DF1A0048E622 /* win32.c */; };
+		08756C241D59E03C0048E622 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 08756BFD1D59DF1A0048E622 /* crc32.c */; };
 		2324BA6E1D008AE900CAED8D /* SWBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2324BA6D1D008AE900CAED8D /* SWBApplication.m */; };
 		2324BAA81D00A4E700CAED8D /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2324BA8B1D00A4E700CAED8D /* GCDWebServer.m */; };
 		2324BAA91D00A4E700CAED8D /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2324BA8D1D00A4E700CAED8D /* GCDWebServerConnection.m */; };
@@ -83,6 +104,53 @@
 
 /* Begin PBXFileReference section */
 		07A4F81C4C5FEFA88FDDA7CC /* Pods-ShadowsocksX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX/Pods-ShadowsocksX.debug.xcconfig"; sourceTree = "<group>"; };
+		08756BF81D59DE940048E622 /* encrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = encrypt.h; sourceTree = "<group>"; };
+		08756BFA1D59DF1A0048E622 /* acl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = acl.c; sourceTree = "<group>"; };
+		08756BFB1D59DF1A0048E622 /* auth.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = auth.c; sourceTree = "<group>"; };
+		08756BFC1D59DF1A0048E622 /* cache.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cache.c; sourceTree = "<group>"; };
+		08756BFD1D59DF1A0048E622 /* crc32.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		08756BFE1D59DF1A0048E622 /* http_simple.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = http_simple.c; sourceTree = "<group>"; };
+		08756BFF1D59DF1A0048E622 /* jconf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = jconf.c; sourceTree = "<group>"; };
+		08756C001D59DF1A0048E622 /* json.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = json.c; sourceTree = "<group>"; };
+		08756C011D59DF1A0048E622 /* manager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = manager.c; sourceTree = "<group>"; };
+		08756C021D59DF1A0048E622 /* netutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = netutils.c; sourceTree = "<group>"; };
+		08756C031D59DF1A0048E622 /* obfs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = obfs.c; sourceTree = "<group>"; };
+		08756C041D59DF1A0048E622 /* obfsutil.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = obfsutil.c; sourceTree = "<group>"; };
+		08756C051D59DF1A0048E622 /* redir.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = redir.c; sourceTree = "<group>"; };
+		08756C061D59DF1A0048E622 /* resolv.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = resolv.c; sourceTree = "<group>"; };
+		08756C071D59DF1A0048E622 /* server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
+		08756C081D59DF1A0048E622 /* tls1.0_session.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tls1.0_session.c; sourceTree = "<group>"; };
+		08756C091D59DF1A0048E622 /* tls1.2_ticket.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tls1.2_ticket.c; sourceTree = "<group>"; };
+		08756C0A1D59DF1A0048E622 /* tunnel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tunnel.c; sourceTree = "<group>"; };
+		08756C0B1D59DF1A0048E622 /* udprelay.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = udprelay.c; sourceTree = "<group>"; };
+		08756C0C1D59DF1A0048E622 /* utils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		08756C0D1D59DF1A0048E622 /* verify.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = verify.c; sourceTree = "<group>"; };
+		08756C0E1D59DF1A0048E622 /* win32.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = win32.c; sourceTree = "<group>"; };
+		08756C251D59E1AF0048E622 /* crc32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		08756C261D59E1E50048E622 /* obfsutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = obfsutil.h; sourceTree = "<group>"; };
+		08756C271D59E4910048E622 /* auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = auth.h; sourceTree = "<group>"; };
+		08756C281D59E4990048E622 /* acl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = acl.h; sourceTree = "<group>"; };
+		08756C291D59E4A70048E622 /* http_simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = http_simple.h; sourceTree = "<group>"; };
+		08756C2A1D59E4DE0048E622 /* cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
+		08756C2B1D59E4DE0048E622 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		08756C2C1D59E4DE0048E622 /* jconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jconf.h; sourceTree = "<group>"; };
+		08756C2D1D59E4DE0048E622 /* json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		08756C2E1D59E4DE0048E622 /* local.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = local.h; sourceTree = "<group>"; };
+		08756C2F1D59E4DE0048E622 /* manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = manager.h; sourceTree = "<group>"; };
+		08756C301D59E4DE0048E622 /* netutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = netutils.h; sourceTree = "<group>"; };
+		08756C311D59E4DE0048E622 /* obfs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = obfs.h; sourceTree = "<group>"; };
+		08756C321D59E4DE0048E622 /* redir.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redir.h; sourceTree = "<group>"; };
+		08756C331D59E4DE0048E622 /* resolv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resolv.h; sourceTree = "<group>"; };
+		08756C341D59E4DE0048E622 /* server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
+		08756C351D59E4DE0048E622 /* shadowsocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shadowsocks.h; sourceTree = "<group>"; };
+		08756C361D59E4DE0048E622 /* tls1.0_session.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tls1.0_session.h; sourceTree = "<group>"; };
+		08756C371D59E4DE0048E622 /* tls1.2_ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tls1.2_ticket.h; sourceTree = "<group>"; };
+		08756C381D59E4DE0048E622 /* tunnel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tunnel.h; sourceTree = "<group>"; };
+		08756C391D59E4DE0048E622 /* udprelay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = udprelay.h; sourceTree = "<group>"; };
+		08756C3A1D59E4DE0048E622 /* uthash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uthash.h; sourceTree = "<group>"; };
+		08756C3B1D59E4DE0048E622 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		08756C3C1D59E4DE0048E622 /* verify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = verify.h; sourceTree = "<group>"; };
+		08756C3D1D59E4DE0048E622 /* win32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = win32.h; sourceTree = "<group>"; };
 		0F1ACF09F09560649B09DD2C /* Pods-ShadowsocksX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX/Pods-ShadowsocksX.release.xcconfig"; sourceTree = "<group>"; };
 		12844C978A2DC27AE84AC5C2 /* libPods-shadowsocks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shadowsocks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2324BA6C1D008AE900CAED8D /* SWBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBApplication.h; sourceTree = "<group>"; };
@@ -409,6 +477,53 @@
 		621571AE16CF6BCB003D96B4 /* ShadowWeb */ = {
 			isa = PBXGroup;
 			children = (
+				08756C281D59E4990048E622 /* acl.h */,
+				08756BFA1D59DF1A0048E622 /* acl.c */,
+				08756C271D59E4910048E622 /* auth.h */,
+				08756BFB1D59DF1A0048E622 /* auth.c */,
+				08756BFC1D59DF1A0048E622 /* cache.c */,
+				08756C251D59E1AF0048E622 /* crc32.h */,
+				08756BFD1D59DF1A0048E622 /* crc32.c */,
+				08756C291D59E4A70048E622 /* http_simple.h */,
+				08756BFE1D59DF1A0048E622 /* http_simple.c */,
+				08756BFF1D59DF1A0048E622 /* jconf.c */,
+				08756C001D59DF1A0048E622 /* json.c */,
+				08756C011D59DF1A0048E622 /* manager.c */,
+				08756C021D59DF1A0048E622 /* netutils.c */,
+				08756C2A1D59E4DE0048E622 /* cache.h */,
+				08756C2B1D59E4DE0048E622 /* common.h */,
+				08756C2C1D59E4DE0048E622 /* jconf.h */,
+				08756C2D1D59E4DE0048E622 /* json.h */,
+				08756C2E1D59E4DE0048E622 /* local.h */,
+				08756C2F1D59E4DE0048E622 /* manager.h */,
+				08756C301D59E4DE0048E622 /* netutils.h */,
+				08756C311D59E4DE0048E622 /* obfs.h */,
+				08756C321D59E4DE0048E622 /* redir.h */,
+				08756C331D59E4DE0048E622 /* resolv.h */,
+				08756C341D59E4DE0048E622 /* server.h */,
+				08756C351D59E4DE0048E622 /* shadowsocks.h */,
+				08756C361D59E4DE0048E622 /* tls1.0_session.h */,
+				08756C371D59E4DE0048E622 /* tls1.2_ticket.h */,
+				08756C381D59E4DE0048E622 /* tunnel.h */,
+				08756C391D59E4DE0048E622 /* udprelay.h */,
+				08756C3A1D59E4DE0048E622 /* uthash.h */,
+				08756C3B1D59E4DE0048E622 /* utils.h */,
+				08756C3C1D59E4DE0048E622 /* verify.h */,
+				08756C3D1D59E4DE0048E622 /* win32.h */,
+				08756C031D59DF1A0048E622 /* obfs.c */,
+				08756C261D59E1E50048E622 /* obfsutil.h */,
+				08756C041D59DF1A0048E622 /* obfsutil.c */,
+				08756C051D59DF1A0048E622 /* redir.c */,
+				08756C061D59DF1A0048E622 /* resolv.c */,
+				08756C071D59DF1A0048E622 /* server.c */,
+				08756C081D59DF1A0048E622 /* tls1.0_session.c */,
+				08756C091D59DF1A0048E622 /* tls1.2_ticket.c */,
+				08756C0A1D59DF1A0048E622 /* tunnel.c */,
+				08756C0B1D59DF1A0048E622 /* udprelay.c */,
+				08756C0C1D59DF1A0048E622 /* utils.c */,
+				08756C0D1D59DF1A0048E622 /* verify.c */,
+				08756C0E1D59DF1A0048E622 /* win32.c */,
+				08756BF81D59DE940048E622 /* encrypt.h */,
 				2324BA881D00A4E700CAED8D /* GCDWebServer */,
 				62E27E5618C1D0C00086033D /* gzip */,
 				628693FA16DA2823008B1A26 /* Shadowsocks */,
@@ -745,6 +860,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08756C241D59E03C0048E622 /* crc32.c in Sources */,
+				08756C0F1D59DF1A0048E622 /* acl.c in Sources */,
+				08756C101D59DF1A0048E622 /* auth.c in Sources */,
+				08756C111D59DF1A0048E622 /* cache.c in Sources */,
+				08756C131D59DF1A0048E622 /* http_simple.c in Sources */,
+				08756C141D59DF1A0048E622 /* jconf.c in Sources */,
+				08756C151D59DF1A0048E622 /* json.c in Sources */,
+				08756C161D59DF1A0048E622 /* manager.c in Sources */,
+				08756C171D59DF1A0048E622 /* netutils.c in Sources */,
+				08756C181D59DF1A0048E622 /* obfs.c in Sources */,
+				08756C191D59DF1A0048E622 /* obfsutil.c in Sources */,
+				08756C1A1D59DF1A0048E622 /* redir.c in Sources */,
+				08756C1B1D59DF1A0048E622 /* resolv.c in Sources */,
+				08756C1C1D59DF1A0048E622 /* server.c in Sources */,
+				08756C1D1D59DF1A0048E622 /* tls1.0_session.c in Sources */,
+				08756C1E1D59DF1A0048E622 /* tls1.2_ticket.c in Sources */,
+				08756C1F1D59DF1A0048E622 /* tunnel.c in Sources */,
+				08756C201D59DF1A0048E622 /* udprelay.c in Sources */,
+				08756C211D59DF1A0048E622 /* utils.c in Sources */,
+				08756C221D59DF1A0048E622 /* verify.c in Sources */,
+				08756C231D59DF1A0048E622 /* win32.c in Sources */,
 				62E27E5A18C1D0CF0086033D /* GZIP.m in Sources */,
 				628C91BD1A07AA5800BA1566 /* Profile.m in Sources */,
 				62E2E1931A5AB1E600C9A2E1 /* AFSecurityPolicy.m in Sources */,
@@ -924,7 +1060,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "OpenSSL-for-iPhone/include/";
+				HEADER_SEARCH_PATHS = (
+					"OpenSSL-for-iPhone/include/",
+					ShadowWeb/libev/,
+					ShadowWeb/libcork/include/,
+					ShadowWeb/libipset/include/,
+					ShadowWeb/libudns/,
+					ShadowWeb/,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -953,7 +1096,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "OpenSSL-for-iPhone/include/";
+				HEADER_SEARCH_PATHS = (
+					"OpenSSL-for-iPhone/include/",
+					ShadowWeb/libev/,
+					ShadowWeb/libcork/include/,
+					ShadowWeb/libipset/include/,
+					ShadowWeb/libudns/,
+					ShadowWeb/,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
@@ -991,6 +1141,10 @@
 				HEADER_SEARCH_PATHS = (
 					"${inherited}",
 					"OpenSSL-for-iPhone/include/",
+					ShadowWeb/libcork/include/libcork/,
+					ShadowWeb/libipset/include/ipset/,
+					ShadowWeb/libudns/,
+					ShadowWeb/,
 				);
 				INFOPLIST_FILE = "ShadowsocksX/ShadowsocksX-Info.plist";
 				LIBRARY_SEARCH_PATHS = "${inherited}";
@@ -1027,6 +1181,10 @@
 				HEADER_SEARCH_PATHS = (
 					"${inherited}",
 					"OpenSSL-for-iPhone/include/",
+					ShadowWeb/libcork/include/libcork/,
+					ShadowWeb/libipset/include/ipset/,
+					ShadowWeb/libudns/,
+					ShadowWeb/,
 				);
 				INFOPLIST_FILE = "ShadowsocksX/ShadowsocksX-Info.plist";
 				LIBRARY_SEARCH_PATHS = "${inherited}";
